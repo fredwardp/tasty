@@ -8,7 +8,6 @@ import SearchSite_Areas from "./pages/SearchSite_Areas/SearchSite_Areas";
 import SearchSite_Categories from "./pages/SearchSite_Categories/SearchSite_Categories";
 import SearchSite_Results from "./pages/SearchSite_Results/SearchSite_Results";
 import Details from "./pages/Details/Details";
-SplashContext;
 
 function App() {
   const [splash, setSplash] = useState(false);
