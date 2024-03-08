@@ -1,0 +1,24 @@
+@font-face {
+  font-family: montserrat;
+  src: url(../public/fonts/montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: montserrat;
+}
+
+:root {
+  --brand-color1: #70b9be;
+  --brand-color2: #353535;
+  --accent-color1: #3ca0a7;
+  --accent-color2: #c7e3e5;
+  --greyscale-color1: #0a2533;
+  --greyscale-color2: #48525f;
+  --greyscale-color3: #97a2b0;
+  --greyscale-color4: #cbd4de;
+  --greyscale-color5: #f1f5f5;
+  --greyscale-color6: #ffffff;
+}
