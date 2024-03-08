@@ -1,0 +1,50 @@
+.home_header {
+  padding: 12vw 6vw 0 6vw;
+}
+
+.home_header h1 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.meal_of_day {
+  height: 50vw;
+  background: url(../../../public/img/home_img/meal_of_day.png) no-repeat center;
+  background-size: cover;
+  width: 70vw;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+.meal_of_day h2 {
+  font-size: 18px;
+  color: var(--greyscale-color6);
+  line-height: 110%;
+  margin-bottom: 9px;
+  max-width: 14ch;
+}
+
+.mod_lower_wrapper {
+  display: flex;
+  justify-content: space-between;
+  color: var(--greyscale-color5);
+  font-size: 14px;
+  width: 100%;
+}
+
+.mod_lower_wrapper div {
+  display: flex;
+  gap: 8px;
+}
+
+.home_round_grey {
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  border: 1px solid var(--greyscale-color6);
+  background-color: var(--greyscale-color3);
+}

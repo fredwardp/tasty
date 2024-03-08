@@ -1,4 +1,29 @@
+nav {
+  padding: 7vw 13vw 3vw 13vw;
+  background-color: var(--greyscale-color6);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -10px 40px rgba(149, 168, 195, 0.15);
+  border-radius: 20px 20px 0 0;
+}
+
+.nav_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
 .active svg {
   fill: #70b9be;
   stroke: #70b9be;
+}
+
+.nav_line {
+  width: 40%;
+  height: 5px;
+  background-color: #c6e3e5;
+  border-radius: 100px;
+  margin-inline: auto;
 }
