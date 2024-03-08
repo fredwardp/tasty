@@ -10,6 +10,12 @@
   font-family: montserrat;
 }
 
+*img,
+svg,
+video {
+  max-width: 100%;
+}
+
 :root {
   --brand-color1: #70b9be;
   --brand-color2: #353535;
