@@ -1,32 +1,32 @@
 .searchBar-input-div {
-    display: flex;
-    border: 1px solid var(--greyscale-color4);
-    border-radius: 10px;
-    margin: auto;
-    padding-left: 1rem;
-    background-color: #fff;
-    display: flex;
-    border: 1px solid var(--greyscale-color4);
-    border-radius: 10px;
-    margin: auto;
-    padding-left: 1rem;
-    background-color: #fff;
+  display: flex;
+  border: 1px solid var(--greyscale-color4);
+  border-radius: 10px;
+  margin: auto;
+  padding-left: 1rem;
+  background-color: #fff;
+  display: flex;
+  border: 1px solid var(--greyscale-color4);
+  border-radius: 10px;
+  margin: auto;
+  padding-left: 1rem;
+  background-color: #fff;
 }
 
 button {
-    all: unset;
+  all: unset;
 }
 
 .searchBar-input {
-    width: 100%;
-    margin: auto;
-    border-radius: 10px;
-    height: 2.5rem;
-    border: solid var(--greyscale-color4) 1px;
-    padding-left: 1rem;
-    border-style: none;
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  height: 2.5rem;
+  border: solid var(--greyscale-color4) 1px;
+  padding-left: 1rem;
+  border-style: none;
 }
 
 .searchBar-input:focus {
-    outline-width: 0;
+  outline-width: 0;
 }
