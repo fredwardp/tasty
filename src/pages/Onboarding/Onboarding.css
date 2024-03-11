@@ -1,0 +1,6 @@
+.container {
+    background: url(Background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

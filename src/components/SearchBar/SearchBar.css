@@ -1,0 +1,29 @@
+.searchBar-input-div {
+    display: flex;
+    border: 1px solid var(--greyscale-color4);
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+    padding-left: 1rem;
+    background-color: #fff;
+}
+
+button {
+    all: unset;
+}
+
+.searchBar-input {
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    height: 2.5rem;
+    border: solid var(--greyscale-color4) 1px;
+    padding-left: 1rem;
+    /* background: url(../../../public/img/home/MagnifiyingGlass.svg) no-repeat;
+    background-position: left 2% center; */
+    border-style: none;
+}
+
+.searchBar-input:focus {
+    outline-width: 0;
+}

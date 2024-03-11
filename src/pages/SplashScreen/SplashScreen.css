@@ -1,0 +1,33 @@
+.container {
+    background-image: url(../../../public/img/home/splash-naked.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: 120px;
+    height: 22px;
+    border-radius: 20px;
+    color: #ffff;
+    border: 2px solid;
+    position: relative;
+}
+.loader::before {
+    content: "";
+    position: absolute;
+    margin: 2px;
+    inset: 0 100% 0 0;
+    border-radius: inherit;
+    background: currentColor;
+    animation: l6 3s infinite;
+}
+@keyframes l6 {
+    100% {
+        inset: 0;
+    }
+}
