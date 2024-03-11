@@ -17,6 +17,7 @@ SplashContext;
 
 function App() {
   const [splash, setSplash] = useState(false);
+<<<<<<< Updated upstream
   const [close, setClose] = useState(false);
   const [sendData, setSendData] = useState(false);
 
@@ -51,6 +52,33 @@ function App() {
         </SplashContext.Provider>
       </CloseContext.Provider>
     </SendDataContext.Provider>
+=======
+
+  return (
+    <SplashContext.Provider value={{ splash, setSplash }}>
+      {/* Ternary um SplashScreen für einige Sekunden anzuzeigen */}
+      {splash ? (
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/onboarding" element={<Onboarding />} />
+            <Route path="/searchsite/areas" element={<SearchSite_Areas />} />
+            <Route
+              path="/searchsite/categories"
+              element={<SearchSite_Categories />}
+            />
+            <Route
+              path="/searchsite/results"
+              element={<SearchSite_Results />}
+            />
+            <Route path="/details/:id" element={<Details />} />
+          </Routes>
+        </BrowserRouter>
+      ) : (
+        <SplashScreen />
+      )}
+    </SplashContext.Provider>
+>>>>>>> Stashed changes
   );
 }
 
