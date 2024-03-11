@@ -71,7 +71,7 @@ const Details = () => {
   };
   // --- id auslesen
   const { id } = useParams();
-  console.log({ id });
+  // console.log({ id });
 
   // --- fetch
   useEffect(() => {
@@ -84,14 +84,14 @@ const Details = () => {
       .then((fetchData) => setOneRecipe(fetchData.meals[0]))
       .catch((err) => console.error("Fehler auf Detailseite", err));
   }, []);
-  console.log(oneRecipe.strInstructions);
+  // console.log(oneRecipe.strInstructions);
 
   // --- Toggle Ingrediants/Instructions
 
   const buttonToggle = () => {
     setIngredients((taco) => !taco);
   };
-  console.log({ ingredients });
+  // console.log({ ingredients });
   // --- youtube-link
   const videoLink = () => {
     window.location.href = `${oneRecipe.strYoutube}`;
@@ -112,7 +112,7 @@ const Details = () => {
             <div className="buttons">
               {ingredients ? (
                 <>
-                  <div onClick={ingredients ? {} : { buttonToggle }}>
+                  <div onClick={ingredients ? "" : buttonToggle}>
                     <IngredientsDark />
                   </div>
                 </>
@@ -131,7 +131,7 @@ const Details = () => {
                 </>
               ) : (
                 <>
-                  <div onClick={!ingredients ? {} : { buttonToggle }}>
+                  <div onClick={!ingredients ? "" : buttonToggle}>
                     <InstructionsDark />
                   </div>
                 </>
