@@ -24,7 +24,7 @@ function App() {
             element={<SearchSite_Categories />}
           />
           <Route path="/searchsite/results" element={<SearchSite_Results />} />
-          <Route path="/details" element={<Details />} />
+          <Route path="/details:id" element={<Details />} />
         </Routes>
       </BrowserRouter>
     </SplashContext.Provider>

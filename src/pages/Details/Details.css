@@ -1,0 +1,51 @@
+.detail {
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+.detail-wrapper {
+  border-radius: 20px;
+}
+.detail-wrapper img {
+  height: 30vh;
+  width: 100vw;
+}
+
+.detail h1 {
+  margin-bottom: 2vw;
+}
+
+.detail h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #748189;
+}
+.detail h2:nth-of-type(2) {
+  margin-bottom: 5vw;
+  font-weight: 300;
+}
+.detail h3 {
+  margin-top: 1vw;
+  margin-bottom: 3vw;
+  font-weight: 700;
+  font-size: 20px;
+}
+/* --- buttons */
+
+.detail .buttons {
+  display: flex;
+}
+
+/* --- ingredients */
+.detail .detail-ingredients p {
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0px 2px 16px 0px rgba(6, 51, 54, 0.1);
+  background-color: #748189;
+}
+/* --- instructions */
+.detail p {
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0px 2px 16px 0px rgba(6, 51, 54, 0.1);
+  margin-bottom: 3vw;
+}
