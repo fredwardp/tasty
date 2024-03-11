@@ -5,6 +5,12 @@
     margin: auto;
     padding-left: 1rem;
     background-color: #fff;
+    display: flex;
+    border: 1px solid var(--greyscale-color4);
+    border-radius: 10px;
+    margin: auto;
+    padding-left: 1rem;
+    background-color: #fff;
 }
 
 button {
