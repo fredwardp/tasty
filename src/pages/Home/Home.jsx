@@ -98,27 +98,27 @@ const Home = () => {
             <Link className="areas_link">Dutch</Link>
           </div>
         </section>
-        <section className="home_categories_section">
-          <div className="home_h2_wrapper">
-            <h2>Categories</h2>
-            <p onClick={categoriesOnClick}>See All</p>
-          </div>
-          <div className="categories_slider">
-            {fullCategories ? (
-              fullCategories.categories.map((item, index) => (
-                <Link>
-                  <article key={index}>
-                    <img src={item.strCategoryThumb} alt="" />
-                    <h3>{item.strCategory}</h3>
-                  </article>
-                </Link>
-              ))
-            ) : (
-              <p>Keine Daten vorhanden</p>
-            )}
-          </div>
-        </section>
+        <div className="home_h2_wrapper">
+          <h2>Categories</h2>
+          <p onClick={categoriesOnClick}>See All</p>
+        </div>
       </header>
+      <section className="home_categories_section">
+        <div className="categories_slider">
+          {fullCategories ? (
+            fullCategories.categories.map((item, index) => (
+              <Link>
+                <article key={index}>
+                  <img src={item.strCategoryThumb} alt="" />
+                  <h3>{item.strCategory}</h3>
+                </article>
+              </Link>
+            ))
+          ) : (
+            <p>Keine Daten vorhanden</p>
+          )}
+        </div>
+      </section>
 
       <Nav />
     </div>

@@ -7,7 +7,7 @@ const PopUp = (props) => {
     <div className="popup_link_container">
       {props.data ? (
         props.data.meals.map((item, index) => (
-          <div className="popup_link_wrapper">
+          <div className="popup_link_wrapper" key={index}>
             <Link key={index} className="popup_link">
               {item[Object.keys(item)[0]]}
             </Link>

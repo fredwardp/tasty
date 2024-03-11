@@ -23,6 +23,6 @@
   border: 1px solid var(--brand-color1);
   border-radius: 20px;
   text-decoration: none;
-  color: black;
+  color: var(--greyscale-color1);
   font-size: 13px;
 }
