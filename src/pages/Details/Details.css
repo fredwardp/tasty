@@ -35,8 +35,6 @@
   display: flex;
 }
 
-}
-
 /* --- ingredients */
 .detail .detail-ingredients p {
   border-radius: 16px;
@@ -45,9 +43,8 @@
   background-color: #748189;
 }
 /* --- instructions */
-.detail p
- {
-border-radius: 16px;
+.detail p {
+  border-radius: 16px;
   padding: 16px;
   box-shadow: 0px 2px 16px 0px rgba(6, 51, 54, 0.1);
   margin-bottom: 3vw;
