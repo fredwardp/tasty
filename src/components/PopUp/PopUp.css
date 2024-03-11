@@ -1,0 +1,28 @@
+.popup_link_container {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  background-color: var(--greyscale-color6);
+
+  max-width: 100%;
+}
+.popup_link_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4px;
+  flex-grow: 1;
+}
+
+.popup_link {
+  flex-grow: 1;
+  text-align: center;
+  padding: 8px 15px;
+  background-color: var(--greyscale-color5);
+  border: 1px solid var(--brand-color1);
+  border-radius: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+}

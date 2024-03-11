@@ -1,5 +1,9 @@
+.home_all_wrapper {
+  position: relative;
+}
+
 .home_header {
-  padding: 12vw 6vw 0 6vw;
+  padding: 12vw 0 100px 6vw;
 }
 
 .home_header h1 {
@@ -18,6 +22,7 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 16px;
+  margin-bottom: 21px;
 }
 
 .meal_of_day h2 {
@@ -47,4 +52,125 @@
   border-radius: 100px;
   border: 1px solid var(--greyscale-color6);
   background-color: var(--greyscale-color3);
+}
+
+.home_h2_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 15px; */
+  padding-right: 5vw;
+}
+
+.home_h2_wrapper:first-of-type {
+  margin-bottom: 15px;
+}
+
+.home_h2_wrapper h2 {
+  font-size: 20px;
+}
+
+.home_h2_wrapper p {
+  color: var(--accent-color1);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.home_areas_section {
+  margin-bottom: 24px;
+}
+
+.home_areas_wrapper {
+  display: flex;
+  gap: 12px;
+  padding-right: 2vw;
+}
+
+.areas_link {
+  padding-block: 9px;
+  flex-grow: 1;
+  text-decoration: none;
+  text-align: center;
+  color: var(--greyscale-color6);
+  background-color: var(--accent-color1);
+  border-radius: 100px;
+}
+
+.categories_slider {
+  display: flex;
+  overflow-y: scroll;
+  gap: 16px;
+  padding-top: 5px;
+  padding-bottom: 14px;
+}
+
+.categories_slider::-webkit-scrollbar {
+  display: none;
+}
+.categories_slider article {
+  margin-top: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 16px rgba(6, 51, 54, 0.1);
+  border-radius: 16px;
+}
+
+.categories_slider article img {
+  max-width: 168px;
+  margin-bottom: 12px;
+}
+
+.categories_slider article h3 {
+  padding-bottom: 30px;
+}
+
+.categories_slider a {
+  text-decoration: none;
+  color: black;
+}
+
+.popup_section {
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 10vw 6vw;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.popup_content {
+  background-color: var(--greyscale-color6);
+  border-radius: 20px;
+  padding: 10vw 6vw;
+  height: 100%;
+  position: relative;
+}
+
+.popup_content h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.close_div {
+  position: absolute;
+  top: 8vw;
+  right: 12vw;
+}
+
+.close_line {
+  height: 2px;
+  width: 22px;
+  border-radius: 100px;
+  background-color: var(--accent-color1);
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+.close_line:nth-of-type(2) {
+  transform: rotate(135deg);
+}
+
+.close {
+  display: none;
 }
