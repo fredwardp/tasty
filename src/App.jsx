@@ -1,10 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import {
-  CloseContext,
-  SendDataContext,
-  SplashContext,
-} from "./context/context";
+import { CloseContext, SendDataContext, SplashContext } from "./context/context";
 import { useState } from "react";
 import Home from "./pages/Home/Home";
 import Onboarding from "./pages/Onboarding/Onboarding";
@@ -16,70 +12,33 @@ import SplashScreen from "./pages/SplashScreen/SplashScreen";
 SplashContext;
 
 function App() {
-  const [splash, setSplash] = useState(false);
-<<<<<<< Updated upstream
-  const [close, setClose] = useState(false);
-  const [sendData, setSendData] = useState(false);
+    const [splash, setSplash] = useState(false);
+    const [close, setClose] = useState(false);
+    const [sendData, setSendData] = useState(false);
 
-  return (
-    <SendDataContext.Provider value={{ sendData, setSendData }}>
-      <CloseContext.Provider value={{ close, setClose }}>
-        <SplashContext.Provider value={{ splash, setSplash }}>
-          {/* Ternary um SplashScreen für einige Sekunden anzuzeigen */}
-          {splash ? (
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/onboarding" element={<Onboarding />} />
-                <Route
-                  path="/searchsite/areas"
-                  element={<SearchSite_Areas />}
-                />
-                <Route
-                  path="/searchsite/categories"
-                  element={<SearchSite_Categories />}
-                />
-                <Route
-                  path="/searchsite/results"
-                  element={<SearchSite_Results />}
-                />
-                <Route path="/details/:id" element={<Details />} />
-              </Routes>
-            </BrowserRouter>
-          ) : (
-            <SplashScreen />
-          )}
-        </SplashContext.Provider>
-      </CloseContext.Provider>
-    </SendDataContext.Provider>
-=======
-
-  return (
-    <SplashContext.Provider value={{ splash, setSplash }}>
-      {/* Ternary um SplashScreen für einige Sekunden anzuzeigen */}
-      {splash ? (
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/onboarding" element={<Onboarding />} />
-            <Route path="/searchsite/areas" element={<SearchSite_Areas />} />
-            <Route
-              path="/searchsite/categories"
-              element={<SearchSite_Categories />}
-            />
-            <Route
-              path="/searchsite/results"
-              element={<SearchSite_Results />}
-            />
-            <Route path="/details/:id" element={<Details />} />
-          </Routes>
-        </BrowserRouter>
-      ) : (
-        <SplashScreen />
-      )}
-    </SplashContext.Provider>
->>>>>>> Stashed changes
-  );
+    return (
+        <SendDataContext.Provider value={{ sendData, setSendData }}>
+            <CloseContext.Provider value={{ close, setClose }}>
+                <SplashContext.Provider value={{ splash, setSplash }}>
+                    {/* Ternary um SplashScreen für einige Sekunden anzuzeigen */}
+                    {splash ? (
+                        <BrowserRouter>
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/onboarding" element={<Onboarding />} />
+                                <Route path="/searchsite/areas" element={<SearchSite_Areas />} />
+                                <Route path="/searchsite/categories" element={<SearchSite_Categories />} />
+                                <Route path="/searchsite/results/:search" element={<SearchSite_Results />} />
+                                <Route path="/details/:id" element={<Details />} />
+                            </Routes>
+                        </BrowserRouter>
+                    ) : (
+                        <SplashScreen />
+                    )}
+                </SplashContext.Provider>
+            </CloseContext.Provider>
+        </SendDataContext.Provider>
+    );
 }
 
 export default App;
