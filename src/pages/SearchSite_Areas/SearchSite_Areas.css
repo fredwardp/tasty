@@ -1,0 +1,32 @@
+.meal-filter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.meal-filter article {
+  margin-top: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 16px rgba(6, 51, 54, 0.1);
+  border-radius: 16px;
+}
+
+.meal-filter article img {
+  /* max-width: 100%; */
+}
+
+.meal-filter a,
+.meal-filter a:link,
+.meal-filter a:visited,
+.meal-filter a:hover,
+.meal-filter a:active {
+  & h3,
+  &:-webkit-any-link {
+    text-decoration: none;
+    color: var(--greyscale-color1);
+    cursor: pointer;
+  }
+}
+
+.search-nav {
+  display: flex;
+}
