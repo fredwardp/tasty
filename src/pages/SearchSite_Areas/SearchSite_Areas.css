@@ -11,7 +11,7 @@
 }
 
 .meal-filter article img {
-  /* max-width: 100%; */
+  border-radius: 20px;
 }
 
 .meal-filter a,
