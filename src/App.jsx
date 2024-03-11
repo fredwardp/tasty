@@ -25,7 +25,7 @@ function App() {
                         <Route path="/searchsite/areas" element={<SearchSite_Areas />} />
                         <Route path="/searchsite/categories" element={<SearchSite_Categories />} />
                         <Route path="/searchsite/results" element={<SearchSite_Results />} />
-                        <Route path="/details" element={<Details />} />
+                        <Route path="/details:id" element={<Details />} />
                     </Routes>
                 </BrowserRouter>
             ) : (

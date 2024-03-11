@@ -1,5 +1,5 @@
 import "./SearchBar.css";
-import MagnifiyingGlass from "../../../public/img/home/MagnifiyingGlass.svg";
+import MagnifiyingGlass from "../../../public/img/search/MagnifiyingGlass.svg";
 import { useState } from "react";
 
 const SearchBar = () => {

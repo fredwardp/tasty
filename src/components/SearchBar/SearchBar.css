@@ -19,8 +19,6 @@ button {
     height: 2.5rem;
     border: solid var(--greyscale-color4) 1px;
     padding-left: 1rem;
-    /* background: url(../../../public/img/home/MagnifiyingGlass.svg) no-repeat;
-    background-position: left 2% center; */
     border-style: none;
 }
 

@@ -12,7 +12,7 @@ const SplashScreen = () => {
     }, []);
     return (
         <div className="container">
-            <img src="public\img\home\logo-tasty 1.png" alt="#" />
+            <img src="public\img\splash\logo-tasty 1.png" alt="#" />
             <div className="loader"></div>
         </div>
     );
