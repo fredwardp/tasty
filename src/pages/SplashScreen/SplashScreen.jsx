@@ -11,8 +11,9 @@ const SplashScreen = () => {
         }, 3000);
     }, []);
     return (
-        <div className="container">
-            <img src="public\img\splash\logo-tasty 1.png" alt="#" />
+        <div className="containerSplash">
+            {/* broken link gefixt */}
+            <img src="\img\splash\logo-tasty 1.png" alt="#" />
             <div className="loader"></div>
         </div>
     );

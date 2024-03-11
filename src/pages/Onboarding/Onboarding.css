@@ -1,8 +1,14 @@
 .container {
-    background: url(Background);
+    background: url(../../../public/img/splash/splash-naked.jpg);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.imageContainer {
+    width: 90%;
+    margin: auto;
 }
 
 .inner {
@@ -10,12 +16,31 @@
     flex-direction: column;
     text-align: center;
     background-color: #fff;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     padding: 2rem 1rem;
+}
+
+.hero {
+    padding-top: 10vw;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+p {
+    width: 80%;
+    margin: auto;
+
+    color: var(--greyscale-color2);
+    margin-bottom: 2rem;
 }
 
 .getStarted {
     background-color: black;
     color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    text-decoration: none;
 }

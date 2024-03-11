@@ -2,13 +2,13 @@ import "./SearchBar.css";
 import MagnifiyingGlass from "../../../public/img/search/MagnifiyingGlass.svg";
 import { useState } from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ setSearchValue }) => {
     const [value, setValue] = useState("");
 
     // ! ##### Hier wird die Suchfunktion implementiert ###########
     const searchForValue = () => {
         console.log(value);
-        // Hier den Code für die Search pages rein
+        setSearchValue(value);
     };
 
     // ! ##########################################################
