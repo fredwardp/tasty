@@ -40,7 +40,7 @@ const All_Areas = (props) => {
               }
               className="areas_link"
             >
-              {props.data.meals[0].strArea ? "Britisch" : "Chicken"}
+              {props.data.meals[0].strArea ? "British" : "Chicken"}
             </Link>
             <Link
               to={

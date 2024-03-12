@@ -77,6 +77,10 @@
   padding-right: 5vw;
 }
 
+.home_h2_wrapper p {
+  cursor: pointer;
+}
+
 .home_h2_wrapper:first-of-type {
   margin-bottom: 15px;
 }
