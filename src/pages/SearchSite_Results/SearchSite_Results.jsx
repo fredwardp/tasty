@@ -47,7 +47,7 @@ const SearchSite_Results = () => {
                   <div className="searchSiteResultLinkDiv">
                     <Link to={`/details/${meal.idMeal}`}>
                       <img
-                        src="/public/img/search-results/Arrow.svg"
+                        src="/img/search-results/Arrow.svg"
                         alt="left arrow"
                       />
                     </Link>
