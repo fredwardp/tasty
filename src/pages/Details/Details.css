@@ -57,7 +57,7 @@
   box-shadow: 0px 2px 16px 0px rgba(6, 51, 54, 0.1);
 }
 /* --- instructions */
-.detail p {
+.detail .detail-instructions-content {
   border-radius: 16px;
   padding: 16px;
   box-shadow: 0px 2px 16px 0px rgba(6, 51, 54, 0.1);
