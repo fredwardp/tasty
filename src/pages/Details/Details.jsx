@@ -9,66 +9,8 @@ import Nav from "../../components/Nav/Nav";
 const Details = () => {
   // --- useState
   const [ingredients, setIngredients] = useState(true);
-  const [oneRecipe, setOneRecipe] = useState([]);
-  // --- test things
-  const testVariable = "52772";
-  const oneRecipeTest = {
-    idMeal: "52772",
-    strMeal: "Teriyaki Chicken Casserole",
-    strDrinkAlternate: null,
-    strCategory: "Chicken",
-    strArea: "Japanese",
-    strInstructions:
-      "Preheat oven to 350° F. Spray a 9x13-inch baking pan with non-stick spray.\r\nCombine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small saucepan and cover. Bring to a boil over medium heat. Remove lid and cook for one minute once boiling.\r\nMeanwhile, stir together the corn starch and 2 tablespoons of water in a separate dish until smooth. Once sauce is boiling, add mixture to the saucepan and stir to combine. Cook until the sauce starts to thicken then remove from heat.\r\nPlace the chicken breasts in the prepared pan. Pour one cup of the sauce over top of chicken. Place chicken in oven and bake 35 minutes or until cooked through. Remove from oven and shred chicken in the dish using two forks.\r\n*Meanwhile, steam or cook the vegetables according to package directions.\r\nAdd the cooked vegetables and rice to the casserole dish with the chicken. Add most of the remaining sauce, reserving a bit to drizzle over the top when serving. Gently toss everything together in the casserole dish until combined. Return to oven and cook 15 minutes. Remove from oven and let stand 5 minutes before serving. Drizzle each serving with remaining sauce. Enjoy!",
-    strMealThumb:
-      "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg",
-    strTags: "Meat,Casserole",
-    strYoutube: "https://www.youtube.com/watch?v=4aZr5hZXP_s",
-    strIngredient1: "soy sauce",
-    strIngredient2: "water",
-    strIngredient3: "brown sugar",
-    strIngredient4: "ground ginger",
-    strIngredient5: "minced garlic",
-    strIngredient6: "cornstarch",
-    strIngredient7: "chicken breasts",
-    strIngredient8: "stir-fry vegetables",
-    strIngredient9: "brown rice",
-    strIngredient10: "",
-    strIngredient11: "",
-    strIngredient12: "",
-    strIngredient13: "",
-    strIngredient14: "",
-    strIngredient15: "",
-    strIngredient16: null,
-    strIngredient17: null,
-    strIngredient18: null,
-    strIngredient19: null,
-    strIngredient20: null,
-    strMeasure1: "3/4 cup",
-    strMeasure2: "1/2 cup",
-    strMeasure3: "1/4 cup",
-    strMeasure4: "1/2 teaspoon",
-    strMeasure5: "1/2 teaspoon",
-    strMeasure6: "4 Tablespoons",
-    strMeasure7: "2",
-    strMeasure8: "1 (12 oz.)",
-    strMeasure9: "3 cups",
-    strMeasure10: "",
-    strMeasure11: "",
-    strMeasure12: "",
-    strMeasure13: "",
-    strMeasure14: "",
-    strMeasure15: "",
-    strMeasure16: null,
-    strMeasure17: null,
-    strMeasure18: null,
-    strMeasure19: null,
-    strMeasure20: null,
-    strSource: null,
-    strImageSource: null,
-    strCreativeCommonsConfirmed: null,
-    dateModified: null,
-  };
+  const [oneRecipe, setOneRecipe] = useState(null);
+
   // --- id auslesen
   const { id } = useParams();
   // console.log({ id });
@@ -77,17 +19,28 @@ const Details = () => {
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${Number(id)}`)
       .then((res) => res.json())
-      .then((fetchData) => setOneRecipe(fetchData.meals[0]))
+      .then((fetchData) => {
+        let meal = fetchData.meals[0];
+        // --- copy ingredients into array of objects
+        meal.ingredients = [];
+        for (let i = 1; i <= 20; i++) {
+          // --- we assume that an empty string marks the end
+          if (meal[`strIngredient${i}`].trim() === "") break;
+          let ingredient = meal[`strIngredient${i}`];
+          let measure = meal[`strMeasure${i}`];
+          let object = { ingredient: ingredient, measure: measure };
+          meal.ingredients.push(object);
+        }
+        setOneRecipe(meal);
+      })
       .catch((err) => console.error("Fehler auf Detailseite", err));
   }, []);
-  // console.log(oneRecipe);
+  console.log(oneRecipe);
 
   // --- Toggle Ingrediants/Instructions
-
   const buttonToggle = () => {
     setIngredients((taco) => !taco);
   };
-  // console.log({ ingredients });
   // --- youtube-link
   const videoLink = () => {
     window.location.href = `${oneRecipe.strYoutube}`;
@@ -133,161 +86,28 @@ const Details = () => {
                 </>
               )}
             </div>
-
+            {/* --- content */}
             {ingredients ? (
               <div className="detail-ingredients">
                 <h3>Ingredients</h3>
-
-                {oneRecipe.strMeasure1 === " " || !oneRecipe.strMeasure1 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure1} {oneRecipe.strIngredient1}
+                {oneRecipe.ingredients.map((oneItem, index) => (
+                  <p key={index}>
+                    {oneItem.measure} {"  "}
+                    {oneItem.ingredient}
                   </p>
-                )}
-                {oneRecipe.strMeasure2 === " " || !oneRecipe.strMeasure2 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure2} {oneRecipe.strIngredient2}
-                  </p>
-                )}
-                {oneRecipe.strMeasure3 === " " || !oneRecipe.strMeasure3 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure3} {oneRecipe.strIngredient3}
-                  </p>
-                )}
-                {oneRecipe.strMeasure4 === " " || !oneRecipe.strMeasure4 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure4} {oneRecipe.strIngredient4}
-                  </p>
-                )}
-                {oneRecipe.strMeasure5 === " " || !oneRecipe.strMeasure5 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure5} {oneRecipe.strIngredient5}
-                  </p>
-                )}
-                {oneRecipe.strMeasure6 === " " || !oneRecipe.strMeasure6 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure6} {oneRecipe.strIngredient6}
-                  </p>
-                )}
-                {oneRecipe.strMeasure7 === " " || !oneRecipe.strMeasure7 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure7} {oneRecipe.strIngredient7}
-                  </p>
-                )}
-                {oneRecipe.strMeasure8 === " " || !oneRecipe.strMeasure8 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure8} {oneRecipe.strIngredient8}
-                  </p>
-                )}
-                {oneRecipe.strMeasure9 === " " || !oneRecipe.strMeasure9 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure9} {oneRecipe.strIngredient9}
-                  </p>
-                )}
-                {oneRecipe.strMeasure10 === " " || !oneRecipe.strMeasure10 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure10} {oneRecipe.strIngredient10}
-                  </p>
-                )}
-                {oneRecipe.strMeasure11 === " " || !oneRecipe.strMeasure11 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure11} {oneRecipe.strIngredient11}
-                  </p>
-                )}
-                {oneRecipe.strMeasure12 === " " || !oneRecipe.strMeasure12 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure12} {oneRecipe.strIngredient12}
-                  </p>
-                )}
-                {oneRecipe.strMeasure13 === " " || !oneRecipe.strMeasure13 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure13} {oneRecipe.strIngredient13}
-                  </p>
-                )}
-                {oneRecipe.strMeasure14 === " " || !oneRecipe.strMeasure14 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure14} {oneRecipe.strIngredient14}
-                  </p>
-                )}
-                {oneRecipe.strMeasure15 === " " || !oneRecipe.strMeasure15 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure15} {oneRecipe.strIngredient15}
-                  </p>
-                )}
-                {oneRecipe.strMeasure16 === " " || !oneRecipe.strMeasure16 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure16} {oneRecipe.strIngredient16}
-                  </p>
-                )}
-                {oneRecipe.strMeasure17 === " " || !oneRecipe.strMeasure17 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure17} {oneRecipe.strIngredient17}
-                  </p>
-                )}
-                {oneRecipe.strMeasure18 === " " || !oneRecipe.strMeasure18 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure18} {oneRecipe.strIngredient18}
-                  </p>
-                )}
-                {oneRecipe.strMeasure19 === " " || !oneRecipe.strMeasure19 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure19} {oneRecipe.strIngredient19}
-                  </p>
-                )}
-                {oneRecipe.strMeasure20 === " " || !oneRecipe.strMeasure20 ? (
-                  ""
-                ) : (
-                  <p>
-                    {oneRecipe.strMeasure20} {oneRecipe.strIngredient20}
-                  </p>
-                )}
+                ))}
               </div>
             ) : (
               <div className="detail-instructions">
                 <h3>Instructions</h3>
                 <div className="detail-instructions-content">
-                  {oneRecipe.strInstructions.split("\r\n").map((taco) => (
-                    <p key={taco} className="detail-instructions-tag">
-                      {taco}
-                    </p>
-                  ))}
+                  {oneRecipe.strInstructions
+                    .split("\r\n")
+                    .map((taco, index) => (
+                      <p key={index} className="detail-instructions-tag">
+                        {taco}
+                      </p>
+                    ))}
                 </div>
                 <div onClick={videoLink}>
                   <svg
