@@ -36,7 +36,9 @@ const SearchSite_Results = () => {
                                     </div>
                                     <div className="searchSiteResultLinkDiv">
                                         {/* Link to detail? Wert idMeal??? */}
-                                        <Link to={`/details/${meal.idMeal}`}>🍆</Link>
+                                        <Link to={`/details/${meal.idMeal}`}>
+                                            <img src="../../../public/img/search-results/Arrow.svg" alt="left arrow" />
+                                        </Link>
                                     </div>
                                 </div>
                             ))}
