@@ -1,4 +1,4 @@
-.container {
+.onboardingContainer {
     background: url(../../../public/img/splash/splash-naked.jpg);
     display: flex;
     flex-direction: column;
@@ -25,11 +25,11 @@
     padding-top: 10vw;
 }
 
-h2 {
+.onboardingContainer h2 {
     margin-bottom: 1rem;
 }
 
-p {
+.onboardingContainer p {
     width: 80%;
     margin: auto;
 
