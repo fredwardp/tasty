@@ -12,7 +12,6 @@ import PopUp from '../../components/PopUp/PopUp';
 const SearchSite_Areas = () => {
   const [areaList, setAreaList] = useState();
   const [areaData, setAreaData] = useState();
-  // const [filteredData, setFilteredData] = useState();
   const { close, setClose } = useContext(CloseContext);
   const { sendData, setSendData } = useContext(SendDataContext);
   const { area } = useParams();
@@ -47,16 +46,6 @@ const SearchSite_Areas = () => {
         )
       );
   }, [area]);
-
-  // TODO ===> Wenn nicht gebraucht - LÖSCHEN!
-  // useEffect(() => {
-  //   const filter = areaData.filter(
-  //     (item) => String(item.meals[0].strArea) === String(strArea)
-  //   );
-  //   setFilteredData(filter);
-  //   console.log(filteredData);
-  // }, [areaData]);
-  // * ========================================
 
   return (
     <>
