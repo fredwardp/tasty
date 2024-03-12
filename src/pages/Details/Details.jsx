@@ -35,7 +35,7 @@ const Details = () => {
       })
       .catch((err) => console.error("Fehler auf Detailseite", err));
   }, []);
-  console.log(oneRecipe);
+  // console.log(oneRecipe);
 
   // --- Toggle Ingrediants/Instructions
   const buttonToggle = () => {
