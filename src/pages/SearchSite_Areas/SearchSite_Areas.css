@@ -2,6 +2,11 @@
   padding-inline: 6vw;
 }
 
+.area-filter {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
 .meal-filter {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -29,6 +34,11 @@
     color: var(--greyscale-color1);
     cursor: pointer;
   }
+}
+
+.search-nav-wrapper {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }
 
 .search-nav {

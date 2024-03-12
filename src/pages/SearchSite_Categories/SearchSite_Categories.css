@@ -1,0 +1,32 @@
+.ategories {
+  padding-inline: 6vw;
+}
+
+.categories-filter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.categories-filter article {
+  margin-top: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 16px rgba(6, 51, 54, 0.1);
+  border-radius: 16px;
+}
+
+.mcategories-filter article img {
+  border-radius: 20px;
+}
+
+.categories-filter a,
+.categories-filter a:link,
+.categories-filter a:visited,
+.categories-filter a:hover,
+.categories-filter a:active {
+  & h3,
+  &:-webkit-any-link {
+    text-decoration: none;
+    color: var(--greyscale-color1);
+    cursor: pointer;
+  }
+}

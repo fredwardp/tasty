@@ -60,11 +60,13 @@ const SearchSite_Categories = () => {
         </article>
       </section>
       <div className='categories'>
-        <div className='search-nav'>
-          <Link to='/'>
-            <ArrowLeft />
-          </Link>
-          <h1>Search</h1>
+        <div className='search-nav-wrapper'>
+          <div className='search-nav'>
+            <Link to='/'>
+              <ArrowLeft />
+            </Link>
+            <h1>Search</h1>
+          </div>
         </div>
         <SearchBar />
         <div className='categories-filter'>
