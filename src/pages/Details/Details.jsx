@@ -4,7 +4,7 @@ import IngredientsDark from "../../assets/icons/detail_icons/IngredientsDark";
 import InstructionsLight from "../../assets/icons/detail_icons/InstructionsLight";
 import InstructionsDark from "../../assets/icons/detail_icons/InstructionsDark";
 import "./Details.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Nav from "../../components/Nav/Nav";
 const Details = () => {
   // --- useState
@@ -71,7 +71,7 @@ const Details = () => {
   };
   // --- id auslesen
   const { id } = useParams();
-  console.log({ id });
+  // console.log({ id });
 
   // --- fetch
   useEffect(() => {
@@ -80,7 +80,7 @@ const Details = () => {
       .then((fetchData) => setOneRecipe(fetchData.meals[0]))
       .catch((err) => console.error("Fehler auf Detailseite", err));
   }, []);
-  // console.log(oneRecipe.strInstructions);
+  // console.log(oneRecipe);
 
   // --- Toggle Ingrediants/Instructions
 
@@ -101,7 +101,7 @@ const Details = () => {
           <img src={oneRecipe.strMealThumb} alt="oneRecipe.strMeal" />
           <div className="detail">
             <h1>{oneRecipe.strMeal}</h1>
-            <h2>Breakfast</h2>
+            <h2>{oneRecipe.strCategory}</h2>
             <h2>{oneRecipe.strArea}</h2>
 
             {/* --- buttons */}
@@ -137,145 +137,146 @@ const Details = () => {
             {ingredients ? (
               <div className="detail-ingredients">
                 <h3>Ingredients</h3>
-                {oneRecipe.strMeasure1 ? (
+
+                {oneRecipe.strMeasure1 === " " || !oneRecipe.strMeasure1 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure1} {oneRecipe.strIngredient1}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure2 ? (
+                {oneRecipe.strMeasure2 === " " || !oneRecipe.strMeasure2 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure2} {oneRecipe.strIngredient2}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure3 ? (
+                {oneRecipe.strMeasure3 === " " || !oneRecipe.strMeasure3 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure3} {oneRecipe.strIngredient3}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure4 ? (
+                {oneRecipe.strMeasure4 === " " || !oneRecipe.strMeasure4 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure4} {oneRecipe.strIngredient4}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure5 ? (
+                {oneRecipe.strMeasure5 === " " || !oneRecipe.strMeasure5 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure5} {oneRecipe.strIngredient5}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure6 ? (
+                {oneRecipe.strMeasure6 === " " || !oneRecipe.strMeasure6 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure6} {oneRecipe.strIngredient6}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure7 ? (
+                {oneRecipe.strMeasure7 === " " || !oneRecipe.strMeasure7 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure7} {oneRecipe.strIngredient7}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure8 ? (
+                {oneRecipe.strMeasure8 === " " || !oneRecipe.strMeasure8 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure8} {oneRecipe.strIngredient8}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure9 ? (
+                {oneRecipe.strMeasure9 === " " || !oneRecipe.strMeasure9 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure9} {oneRecipe.strIngredient9}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure10 ? (
+                {oneRecipe.strMeasure10 === " " || !oneRecipe.strMeasure10 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure10} {oneRecipe.strIngredient10}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure11 ? (
+                {oneRecipe.strMeasure11 === " " || !oneRecipe.strMeasure11 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure11} {oneRecipe.strIngredient11}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure12 ? (
+                {oneRecipe.strMeasure12 === " " || !oneRecipe.strMeasure12 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure12} {oneRecipe.strIngredient12}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure13 ? (
+                {oneRecipe.strMeasure13 === " " || !oneRecipe.strMeasure13 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure13} {oneRecipe.strIngredient13}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure14 ? (
+                {oneRecipe.strMeasure14 === " " || !oneRecipe.strMeasure14 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure14} {oneRecipe.strIngredient14}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure15 ? (
+                {oneRecipe.strMeasure15 === " " || !oneRecipe.strMeasure15 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure15} {oneRecipe.strIngredient15}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure16 ? (
+                {oneRecipe.strMeasure16 === " " || !oneRecipe.strMeasure16 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure16} {oneRecipe.strIngredient16}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure17 ? (
+                {oneRecipe.strMeasure17 === " " || !oneRecipe.strMeasure17 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure17} {oneRecipe.strIngredient17}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure18 ? (
+                {oneRecipe.strMeasure18 === " " || !oneRecipe.strMeasure18 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure18} {oneRecipe.strIngredient18}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure19 ? (
+                {oneRecipe.strMeasure19 === " " || !oneRecipe.strMeasure19 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure19} {oneRecipe.strIngredient19}
                   </p>
-                ) : (
-                  ""
                 )}
-                {oneRecipe.strMeasure20 ? (
+                {oneRecipe.strMeasure20 === " " || !oneRecipe.strMeasure20 ? (
+                  ""
+                ) : (
                   <p>
                     {oneRecipe.strMeasure20} {oneRecipe.strIngredient20}
                   </p>
-                ) : (
-                  ""
                 )}
               </div>
             ) : (
