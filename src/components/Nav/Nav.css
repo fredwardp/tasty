@@ -1,5 +1,5 @@
 nav {
-  padding: 7vw 13vw 3vw 13vw;
+  padding: 25px 13vw 13px 13vw;
   background-color: var(--greyscale-color6);
   position: fixed;
   z-index: 999;

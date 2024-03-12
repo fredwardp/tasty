@@ -75,16 +75,18 @@ const Home = () => {
         </div>
         <h1>Meal of the Day</h1>
         {random ? (
-          <div className="meal_of_day">
-            <h2>{random.meals[0].strMeal}</h2>
-            <div className="mod_lower_wrapper">
-              <div>
-                <div className="home_round_grey"></div>
-                {random.meals[0].strCategory}
+          <Link to={`/details/${random.meals[0].idMeal}`} className="mod_link">
+            <div className="meal_of_day">
+              <h2>{random.meals[0].strMeal}</h2>
+              <div className="mod_lower_wrapper">
+                <div>
+                  <div className="home_round_grey"></div>
+                  {random.meals[0].strCategory}
+                </div>
+                <p>{random.meals[0].strArea}</p>
               </div>
-              <p>{random.meals[0].strArea}</p>
             </div>
-          </div>
+          </Link>
         ) : (
           <p>Loading..</p>
         )}

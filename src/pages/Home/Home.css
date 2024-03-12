@@ -18,6 +18,14 @@
   font-weight: 700;
 }
 
+.mod_link {
+  text-decoration: none;
+}
+
+.meal_of_day:hover {
+  filter: brightness(0.9);
+}
+
 .meal_of_day {
   height: 50vw;
   background: url(../../../public/img/home_img/meal_of_day.png) no-repeat center;
@@ -29,6 +37,7 @@
   justify-content: flex-end;
   padding: 16px;
   margin-bottom: 21px;
+  transition: all 0.3s ease;
 }
 
 .meal_of_day h2 {
@@ -154,7 +163,7 @@
   padding: 10vw 6vw;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 2;
+  z-index: 1000;
   overflow: hidden;
 }
 
