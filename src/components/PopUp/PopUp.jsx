@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import "./PopUp.css";
+import { useContext } from "react";
+import { CloseContext, SendDataContext } from "../../context/context";
 
 const PopUp = (props) => {
-  console.log(props.data);
+  const { close, setClose } = useContext(CloseContext);
+  console.log(close);
 
   return (
     <div className="popup_link_container">
@@ -10,6 +13,7 @@ const PopUp = (props) => {
         props.data.meals.map((item, index) => (
           <div className="popup_link_wrapper" key={index}>
             <Link
+              onClick={() => setClose((close) => !close)}
               to={`${
                 item.strCategory
                   ? "/searchsite/categories"

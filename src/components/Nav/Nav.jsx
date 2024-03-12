@@ -9,10 +9,10 @@ const Nav = () => {
   return (
     <nav>
       <div className="nav_wrapper">
-        <NavLink to="/">
+        <NavLink to="/home">
           <HomeIcon />
         </NavLink>
-        <NavLink to="/searchsite/results">
+        <NavLink to="/searchsite/results/Beef">
           <SearchIcon />
         </NavLink>
         <NavLink to="/favorites">

@@ -31,8 +31,8 @@ function App() {
             {splash ? (
               <BrowserRouter>
                 <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/onboarding" element={<Onboarding />} />
+                  <Route path="/" element={<Onboarding />} />
+                  <Route path="/home" element={<Home />} />
                   <Route
                     path="/searchsite/areas/:area"
                     element={<SearchSite_Areas />}

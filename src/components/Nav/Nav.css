@@ -2,6 +2,7 @@ nav {
   padding: 7vw 13vw 3vw 13vw;
   background-color: var(--greyscale-color6);
   position: fixed;
+  z-index: 999;
   bottom: 0;
   width: 100%;
   box-shadow: 0 -10px 40px rgba(149, 168, 195, 0.15);
