@@ -79,7 +79,7 @@ const SearchSite_Areas = () => {
         </div>
         <SearchBar />
         <div className='area-filter'>
-          <All_Areas />
+          <All_Areas data={areaList} />
         </div>
         <div className='meal-filter'>
           {areaData ? (
@@ -102,5 +102,3 @@ const SearchSite_Areas = () => {
 };
 
 export default SearchSite_Areas;
-
-// `https://www.themealdb.com/api/json/v1/1/filter.php?a=${strArea}`;
