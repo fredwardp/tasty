@@ -3,6 +3,19 @@
     padding-bottom: 6rem;
 }
 
+.searchSiteResultsNav {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.searchSiteResultsNav a {
+    position: absolute;
+    left: 0;
+    top: 30%;
+}
+
 .searchSiteResultTile {
     display: flex;
     justify-content: space-between;
@@ -20,13 +33,10 @@
     justify-content: space-between;
 }
 
-/* .searchSiteResultInnerTile:last-of-type {
-    margin-bottom: 5rem;
-} */
-
 .searchSiteResultInnerTile h3 {
     font-size: 1rem;
     max-width: 15ch;
+    margin-bottom: 0.75rem;
 }
 .searchSiteResultImage {
     width: 80px;
@@ -40,12 +50,13 @@
 }
 
 .searchSiteResultsInnerDiv p {
+    font-size: 0.9rem;
     color: var(--greyscale-color2);
 }
 .searchSiteDot {
     border-radius: 50%;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
     background-color: var(--accent-color1);
 }
 

@@ -4,6 +4,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { SearchValueContext } from "../../context/context";
+import ArrowLeft from "/public/img/search/ArrowLeft";
 
 const SearchSite_Results = () => {
     const [myData, setMyData] = useState();
@@ -16,10 +17,15 @@ const SearchSite_Results = () => {
             .catch((error) => console.log("An error has occured", error));
     }, [searchValue]);
 
-    console.log("My Data", myData);
     return (
         <>
             <div className="searchResultsContainer">
+                <div className="searchSiteResultsNav">
+                    <Link to="/">
+                        <ArrowLeft />
+                    </Link>
+                    <h1>Search</h1>
+                </div>
                 <SearchBar setSearchValue={setSearchValue} />
                 {myData && myData.meals && myData.meals.length > 0 ? (
                     <div>
@@ -35,7 +41,6 @@ const SearchSite_Results = () => {
                                         </div>
                                     </div>
                                     <div className="searchSiteResultLinkDiv">
-                                        {/* Link to detail? Wert idMeal??? */}
                                         <Link to={`/details/${meal.idMeal}`}>
                                             <img src="../../../public/img/search-results/Arrow.svg" alt="left arrow" />
                                         </Link>
@@ -45,7 +50,7 @@ const SearchSite_Results = () => {
                         </ul>
                     </div>
                 ) : (
-                    <h2 style={{ color: "red" }}>No Data found. Try again.</h2>
+                    <h2 style={{ color: "red" }}></h2>
                 )}
             </div>
 

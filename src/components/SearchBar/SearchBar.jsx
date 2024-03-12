@@ -10,7 +10,6 @@ const SearchBar = () => {
     const { searchValue, setSearchValue } = useContext(SearchValueContext);
 
     const searchForValue = () => {
-        console.log(value);
         setSearchValue(value);
     };
 
@@ -22,7 +21,6 @@ const SearchBar = () => {
 
     return (
         <div className="searchBar-container">
-            {/* In searchBar-container werden button(lupe) und input miteinander verwoben um die gewünschte Darstellung zu erreichen */}
             <div className="searchBar-input-div">
                 <div className="searchBarLinkDiv">
                     <Link to={`/searchsite/results/${value}`}>
@@ -31,15 +29,7 @@ const SearchBar = () => {
                         </button>
                     </Link>
                 </div>
-                <input
-                    type="text"
-                    spellCheck="false"
-                    placeholder="Search"
-                    className="searchBar-input"
-                    value={value}
-                    onChange={(event) => setValue(event.target.value)}
-                    onKeyDown={pressEnter} // onkeydown/handledown sorgt dafür, dass handlesearch bei betätigen der enter taste ausgelöst werden.
-                />
+                <input type="text" spellCheck="false" placeholder="Search" className="searchBar-input" value={value} onChange={(event) => setValue(event.target.value)} onKeyDown={pressEnter} />
             </div>
         </div>
     );
