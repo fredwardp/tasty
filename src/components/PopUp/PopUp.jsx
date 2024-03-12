@@ -10,9 +10,11 @@ const PopUp = (props) => {
         props.data.meals.map((item, index) => (
           <div className="popup_link_wrapper" key={index}>
             <Link
-              to={`${item.strCategory ? "categories" : "areas"}/${
-                item[Object.keys(item)[0]]
-              }`}
+              to={`${
+                item.strCategory
+                  ? "/searchsite/categories"
+                  : "/searchsite/areas"
+              }/${item[Object.keys(item)[0]]}`}
               key={index}
               className="popup_link"
             >

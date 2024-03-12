@@ -1,3 +1,7 @@
+.areas {
+  padding-inline: 6vw;
+}
+
 .meal-filter {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -11,7 +15,7 @@
 }
 
 .meal-filter article img {
-  /* max-width: 100%; */
+  border-radius: 20px;
 }
 
 .meal-filter a,
@@ -29,4 +33,12 @@
 
 .search-nav {
   display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.search-nav a {
+  position: absolute;
+  left: 0;
+  top: 30%;
 }
