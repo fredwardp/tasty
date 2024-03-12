@@ -24,7 +24,7 @@ const SearchSite_Areas = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=Japanese`)
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${strArea}`)
       .then((response) => response.json())
       .then((fetchedData) => setAreaData(fetchedData))
       .catch((error) =>
