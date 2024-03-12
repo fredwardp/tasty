@@ -1,11 +1,13 @@
 import "./SearchBar.css";
 import MagnifiyingGlass from "../../../public/img/search/MagnifiyingGlass.svg";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+import { SearchValueContext } from "../../context/context";
 
-const SearchBar = ({ setSearchValue }) => {
+const SearchBar = () => {
     const [value, setValue] = useState("");
     const { search } = useParams();
+    const { searchValue, setSearchValue } = useContext(SearchValueContext);
 
     const searchForValue = () => {
         console.log(value);

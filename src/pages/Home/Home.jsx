@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import PopUp from "../../components/PopUp/PopUp";
 import All_Areas from "../../components/All_Areas/All_Areas";
 import SearchBar from "../../components/SearchBar/SearchBar";
+// import { SearchValueContext } from "../../context/context";
+
 const Home = () => {
     const [random, setRandom] = useState();
     const [fullCategories, setFullCategories] = useState();

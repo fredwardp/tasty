@@ -1,12 +1,13 @@
 import Nav from "../../components/Nav/Nav";
 import "./SearchSite_Results.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { SearchValueContext } from "../../context/context";
 
 const SearchSite_Results = () => {
-    const [searchValue, setSearchValue] = useState("");
     const [myData, setMyData] = useState();
+    const { searchValue, setSearchValue } = useContext(SearchValueContext);
 
     useEffect(() => {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
@@ -18,11 +19,9 @@ const SearchSite_Results = () => {
     console.log("My Data", myData);
     return (
         <>
-            {/* ! ???? ! Abfragen ob array == 0/null dann Fehlermeldung auf Screen ausgeben */}
-            {myData <= 0 ? <p>No Data</p> : <p>Data</p>}
             <div className="searchResultsContainer">
                 <SearchBar setSearchValue={setSearchValue} />
-                {myData ? (
+                {myData && myData.meals && myData.meals.length > 0 ? (
                     <div>
                         <ul>
                             {myData.meals.map((meal, index) => (
@@ -37,14 +36,14 @@ const SearchSite_Results = () => {
                                     </div>
                                     <div className="searchSiteResultLinkDiv">
                                         {/* Link to detail? Wert idMeal??? */}
-                                        <Link to={`"/details/${meal.idMeal}`}>🍆</Link>
+                                        <Link to={`/details/${meal.idMeal}`}>🍆</Link>
                                     </div>
                                 </div>
                             ))}
                         </ul>
                     </div>
                 ) : (
-                    <h2 style={{ color: "red" }}>Data loading...</h2>
+                    <h2 style={{ color: "red" }}>No Data found. Try again.</h2>
                 )}
             </div>
 
