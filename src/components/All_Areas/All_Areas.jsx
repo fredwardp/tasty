@@ -12,6 +12,8 @@ const All_Areas = (props) => {
     setClose((close) => !close);
     console.log(sendData);
   };
+
+  console.log(props.data);
   return (
     <section className="home_areas_section">
       <div className="home_h2_wrapper">
@@ -20,11 +22,30 @@ const All_Areas = (props) => {
       </div>
 
       <div className="home_areas_wrapper">
-        <Link to={`/${props.data}`} className="areas_link">
+        <Link
+          to={
+            props.data ? `/searchsite/areas/${props.data.meals[0].strArea}` : ""
+          }
+          className="areas_link"
+        >
           American
         </Link>
-        <Link className="areas_link">British</Link>
-        <Link className="areas_link">Dutch</Link>
+        <Link
+          to={
+            props.data ? `/searchsite/areas/${props.data.meals[1].strArea}` : ""
+          }
+          className="areas_link"
+        >
+          British
+        </Link>
+        <Link
+          to={
+            props.data ? `/searchsite/areas/${props.data.meals[2].strArea}` : ""
+          }
+          className="areas_link"
+        >
+          Dutch
+        </Link>
       </div>
     </section>
   );

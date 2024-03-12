@@ -96,7 +96,10 @@ const Home = () => {
         <div className="categories_slider">
           {fullCategories ? (
             fullCategories.categories.map((item, index) => (
-              <Link key={index} to={`/searchsite/categories/`}>
+              <Link
+                key={index}
+                to={`/searchsite/categories/${item.strCategory}`}
+              >
                 <article key={index}>
                   <img src={item.strCategoryThumb} alt="" />
                   <h3>{item.strCategory}</h3>
