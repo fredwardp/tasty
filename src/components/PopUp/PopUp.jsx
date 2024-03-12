@@ -5,7 +5,6 @@ import { CloseContext, SendDataContext } from "../../context/context";
 
 const PopUp = (props) => {
   const { close, setClose } = useContext(CloseContext);
-  console.log(close);
 
   return (
     <div className="popup_link_container">

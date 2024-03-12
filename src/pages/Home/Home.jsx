@@ -47,7 +47,6 @@ const Home = () => {
 
   const categoriesOnClick = () => {
     setClose((close) => !close);
-    console.log(sendData);
   };
 
   const closeFunc = () => {
