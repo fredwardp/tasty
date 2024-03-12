@@ -7,7 +7,7 @@ Live Site: https://tasty-mu.vercel.app/
 
 
 
-@4MichaelGee76: Oboarding-Page, Loading-Page, SearchBar-Results Page
+@MichaelGee76: Oboarding-Page, Loading-Page, SearchBar-Results Page
 
 @david06186: SearchBar-Areas Page, SearchBar-Categories Page
 
