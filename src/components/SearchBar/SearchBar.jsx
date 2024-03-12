@@ -22,11 +22,13 @@ const SearchBar = ({ setSearchValue }) => {
         <div className="searchBar-container">
             {/* In searchBar-container werden button(lupe) und input miteinander verwoben um die gewünschte Darstellung zu erreichen */}
             <div className="searchBar-input-div">
-                <button onClick={searchForValue}>
-                    <Link to={`/searchsite/results/${value} `}>
-                        <img src={MagnifiyingGlass} alt="magnifiying glass" />
+                <div className="searchBarLinkDiv">
+                    <Link to={`/searchsite/results/${value}`}>
+                        <button onClick={searchForValue} className="searchBarButton">
+                            <img src={MagnifiyingGlass} alt="magnifying glass" />
+                        </button>
                     </Link>
-                </button>
+                </div>
                 <input
                     type="text"
                     spellCheck="false"

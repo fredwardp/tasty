@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Onboarding = () => {
     return (
         <>
-            <div className="container">
+            <div className="onboardingContainer">
                 <div className="imageContainer">
                     <img src={Hero} alt="Hero image circle of food" className="hero" />
                 </div>
