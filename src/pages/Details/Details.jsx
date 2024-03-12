@@ -282,13 +282,13 @@ const Details = () => {
             ) : (
               <div className="detail-instructions">
                 <h3>Instructions</h3>
-
-                {oneRecipe.strInstructions.split("\r\n").map((taco) => (
-                  <p key={taco} className="detail-instructions-tag">
-                    {taco}
-                  </p>
-                ))}
-
+                <div className="detail-instructions-content">
+                  {oneRecipe.strInstructions.split("\r\n").map((taco) => (
+                    <p key={taco} className="detail-instructions-tag">
+                      {taco}
+                    </p>
+                  ))}
+                </div>
                 <div onClick={videoLink}>
                   <svg
                     width="327"
