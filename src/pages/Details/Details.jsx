@@ -75,23 +75,19 @@ const Details = () => {
 
   // --- fetch
   useEffect(() => {
-    fetch(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${Number(
-        testVariable
-      )}`
-    )
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${Number(id)}`)
       .then((res) => res.json())
       .then((fetchData) => setOneRecipe(fetchData.meals[0]))
       .catch((err) => console.error("Fehler auf Detailseite", err));
   }, []);
-  console.log(oneRecipe.strInstructions);
+  // console.log(oneRecipe.strInstructions);
 
   // --- Toggle Ingrediants/Instructions
 
   const buttonToggle = () => {
     setIngredients((taco) => !taco);
   };
-  console.log({ ingredients });
+  // console.log({ ingredients });
   // --- youtube-link
   const videoLink = () => {
     window.location.href = `${oneRecipe.strYoutube}`;
@@ -112,7 +108,7 @@ const Details = () => {
             <div className="buttons">
               {ingredients ? (
                 <>
-                  <div onClick={ingredients ? {} : { buttonToggle }}>
+                  <div>
                     <IngredientsDark />
                   </div>
                 </>
@@ -131,7 +127,7 @@ const Details = () => {
                 </>
               ) : (
                 <>
-                  <div onClick={!ingredients ? {} : { buttonToggle }}>
+                  <div>
                     <InstructionsDark />
                   </div>
                 </>
@@ -285,9 +281,13 @@ const Details = () => {
             ) : (
               <div className="detail-instructions">
                 <h3>Instructions</h3>
-                <p className="detail-instructions-tag">
-                  {oneRecipe.strInstructions}
-                </p>
+
+                {oneRecipe.strInstructions.split("\r\n").map((taco) => (
+                  <p key={taco} className="detail-instructions-tag">
+                    {taco}
+                  </p>
+                ))}
+
                 <div onClick={videoLink}>
                   <svg
                     width="327"
