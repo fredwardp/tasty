@@ -47,11 +47,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2px;
+
   background-color: #e6ebf2;
   border-radius: 16px;
 }
-
+.buttons div {
+  margin-top: 3px;
+}
 /* --- ingredients */
 .detail .detail-ingredients p {
   border-radius: 16px;
